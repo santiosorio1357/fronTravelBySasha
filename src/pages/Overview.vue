@@ -101,7 +101,7 @@ export default {
       console.log(response)
     },
     async registrarVuelo() {
-      let url = "http://localhost:8000/vuelos";
+      let url = "https://secret-tundra-95853.herokuapp.com/vuelos";
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
