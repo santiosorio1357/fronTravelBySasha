@@ -223,6 +223,11 @@ export default {
     let promise = await response.json();
     let datos = promise.info;
     this.data = datos;
+    for (let i=0;i<this.data.length;i++){
+      if(this.data[i].tipo=="admin"){
+        this.data.splice(i)
+      }
+    }
   },
 };
 </script>
