@@ -47,14 +47,14 @@ export default {
       }
     },
     async consultarUsuario(d) {
-      let url = "http://localhost:8000/usuarios/" + d._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + d._id;
       let response = await fetch(url);
       let promise = await response.json();
       let datos = promise.info;
     },
   },
   async mounted() {
-    let url = "http://localhost:8000/usuarios";
+    let url = "https://secret-tundra-95853.herokuapp.com/usuarios";
     let response = await fetch(url);
     let promise = await response.json();
     let datos = promise.info;

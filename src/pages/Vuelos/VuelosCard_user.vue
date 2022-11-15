@@ -92,7 +92,7 @@ export default {
       this.datosReserva.IdVuelo = d._id
       if (this.datosReserva.cantidadSillas != "" && this.datosReserva.cantidadSillas != "e") {
         this.datosReserva.cantidadSillas = parseInt(this.datosReserva.cantidadSillas, 10)
-        let url = "http://localhost:8000/reservas";
+        let url = "https://secret-tundra-95853.herokuapp.com/reservas";
         let token = localStorage.getItem("user-token");
         token = token.slice(1, -1);
         let response = await fetch(url, {
@@ -129,7 +129,7 @@ export default {
 
   },
   async mounted() {
-    let url = "http://localhost:8000/vuelos";
+    let url = "https://secret-tundra-95853.herokuapp.com/vuelos";
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };
@@ -139,7 +139,7 @@ export default {
     this.data = datos;
     for (let i = 0; i < this.data.length; i++) {
 
-      let url = "http://localhost:8000/aviones/" + this.data[i].IdAvion;
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones/" + this.data[i].IdAvion;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };

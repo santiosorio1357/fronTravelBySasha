@@ -88,7 +88,7 @@ export default {
     },
     
     async updateProfile(id) {
-      let url = "http://localhost:8000/usuarios/" + id;
+      let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
@@ -122,7 +122,7 @@ export default {
   async mounted() {
     let user=localStorage.getItem("user-logged")
     user=JSON.parse(user)._id
-    let url = "http://localhost:8000/usuarios/" + user;
+    let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + user;
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };

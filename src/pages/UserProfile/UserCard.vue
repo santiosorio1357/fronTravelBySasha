@@ -144,7 +144,7 @@ export default {
     },
     async consultarUsuario(d) {
       this.editProfile = true;
-      let url = "http://localhost:8000/usuarios/" + d._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + d._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -159,7 +159,7 @@ export default {
       this.dataEdit.contraseña = datos.contraseña;
     },
     async updateProfile(id) {
-      let url = "http://localhost:8000/usuarios/" + id;
+      let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
@@ -189,7 +189,7 @@ export default {
       console.log(await response.json());
     },
     async borrarUsuario(id) {
-      let url = "http://localhost:8000/usuarios/" + id._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/usuarios/" + id._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -215,7 +215,7 @@ export default {
     },
   },
   async mounted() {
-    let url = "http://localhost:8000/usuarios";
+    let url = "https://secret-tundra-95853.herokuapp.com/usuarios";
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };

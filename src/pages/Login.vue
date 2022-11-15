@@ -170,7 +170,7 @@ export default {
           contraseña: this.passwordLogin,
         }; 
 
-        let url = "http://localhost:8000/login";
+        let url = "https://secret-tundra-95853.herokuapp.com/login";
         let response = await fetch(url, {
           method: "POST",
           headers: {
@@ -227,7 +227,7 @@ export default {
           contraseña: this.passwordReg,
           create_by:this.nameReg
         };
-        let url = "http://localhost:8000/usuario";
+        let url = "https://secret-tundra-95853.herokuapp.com/usuario";
         let token =
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzZlZGEzN2FkNzg2ZTBlMjlmZjZkZDIiLCJJZFVzdWFyaW8iOiIxMDAwNDEzNzQxIiwibm9tYnJlIjoiTWFybG9uIE9ycmVnbyIsInRpcG8iOiJ1c2VyIiwiY29ycmVvIjoibWFybG9ucmVzdHJlcG9AZ21haWwuY29tIiwiaWF0IjoxNjY4MjEwNTU5fQ.Pl9SdO_ZSYaQAZszVGZ4brB-woszU-gMec4LCqJw2eU";
         

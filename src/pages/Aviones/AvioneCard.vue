@@ -104,7 +104,7 @@ export default {
       }
     },
     async updateAvion(id) {
-      let url = "http://localhost:8000/aviones/" + id;
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones/" + id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       this.dataEdit.capacidad = parseInt(this.dataEdit.capacidad,10)
@@ -136,7 +136,7 @@ export default {
     },
     async consultarAvion(d) {
       this.avionEdit = true
-      let url = "http://localhost:8000/aviones/" + d._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones/" + d._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -149,8 +149,8 @@ export default {
       this.dataEdit._id = datos._id
     },
     async borrarAvion(id) {
-      let urlVuelos = "http://localhost:8000/vuelos/avion/" + id._id
-      let url = "http://localhost:8000/aviones/" + id._id;
+      let urlVuelos = "https://secret-tundra-95853.herokuapp.com/vuelos/avion/" + id._id
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones/" + id._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -191,7 +191,7 @@ export default {
     },
   },
   async mounted() {
-    let url = "http://localhost:8000/aviones";
+    let url = "https://secret-tundra-95853.herokuapp.com/aviones";
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };

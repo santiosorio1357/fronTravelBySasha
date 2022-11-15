@@ -120,7 +120,7 @@ export default {
     },
     async consultarVuelo(d) {
       this.vuelosEdit = true;
-      let url = "http://localhost:8000/vuelos/" + d._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/vuelos/" + d._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
@@ -132,14 +132,13 @@ export default {
       });
       let promise = await response.json();
       let datos = promise.info;
-
       this.dataEdit._id = datos._id;
       this.dataEdit.IdPiloto = datos.IdPiloto;
       this.dataEdit.IdAvion = datos.IdAvion;
       this.dataEdit.FechaDespegue = datos.FechaDespegue;
       this.dataEdit.FechaAterrizaje = datos.FechaAterrizaje;
       this.dataEdit.Tiempo = datos.Tiempo;
-      let urlA = "http://localhost:8000/aviones";
+      let urlA = "https://secret-tundra-95853.herokuapp.com/aviones";
       let responseA = await fetch(urlA, {
         method: "GET",
         headers: {
@@ -157,7 +156,7 @@ export default {
       });
     },
     async updateVuelo(id) {
-      let url = "http://localhost:8000/vuelos/" + id;
+      let url = "https://secret-tundra-95853.herokuapp.com/vuelos/" + id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
@@ -187,11 +186,10 @@ export default {
       
     },
     async borrarVuelo(id) {
-      let url = "http://localhost:8000/vuelos/" + id._id;
+      let url = "https://secret-tundra-95853.herokuapp.com/vuelos/" + id._id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
-
       let response = await fetch(url, {
         method: "DELETE",
         headers,
@@ -214,7 +212,7 @@ export default {
     },
   },
   async mounted() {
-    let url = "http://localhost:8000/vuelos";
+    let url = "https://secret-tundra-95853.herokuapp.com/vuelos";
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };
@@ -224,7 +222,7 @@ export default {
     this.data = datos;
     for (let i = 0; i < this.data.length; i++) {
       
-      let url = "http://localhost:8000/aviones/"+this.data[i].IdAvion;
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones/"+this.data[i].IdAvion;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -235,7 +233,6 @@ export default {
       
     }
     
-
   },
 };
 </script>

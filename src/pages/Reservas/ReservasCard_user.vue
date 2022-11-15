@@ -109,7 +109,7 @@ export default {
       
     },
     async eliminarReserva(idReserva) {
-      let url = "http://localhost:8000/reservas/" + idReserva;
+      let url = "https://secret-tundra-95853.herokuapp.com/reservas/" + idReserva;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       const headers = { authorization: `Bearer ${token}` };
@@ -135,7 +135,7 @@ export default {
       }
     },
     async updateReserva(id) {
-      let url = "http://localhost:8000/reservas/" + id;
+      let url = "https://secret-tundra-95853.herokuapp.com/reservas/" + id;
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
@@ -168,7 +168,7 @@ export default {
     let user=localStorage.getItem("user-logged")
     user=JSON.parse(user)._id
     
-    let url = "http://localhost:8000/reservas/usuarios/"+user;
+    let url = "https://secret-tundra-95853.herokuapp.com/reservas/usuarios/"+user;
     let token = localStorage.getItem("user-token");
     token = token.slice(1, -1);
     const headers = { authorization: `Bearer ${token}` };

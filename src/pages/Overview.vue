@@ -80,7 +80,7 @@ export default {
   methods: {
     async formAñadir() {
       this.formVuelo = true
-      let url = "http://localhost:8000/aviones";
+      let url = "https://secret-tundra-95853.herokuapp.com/aviones";
       let token = localStorage.getItem("user-token");
       token = token.slice(1, -1);
       let response = await fetch(url, {
