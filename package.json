@@ -10,8 +10,7 @@
     "e2e": "node test/e2e/runner.js",
     "lint": "vue-cli-service lint",
     "dev": "vue-cli-service serve --open",
-    "lint-fix": "vue-cli-service lint --fix",
-    "start": "node app.js"
+    "lint-fix": "vue-cli-service lint --fix"
   },
   "dependencies": {
     "@coreui/bootstrap-vue": "^1.0.0-beta.0",
